@@ -54,24 +54,16 @@
   },
   "author": {
     "name": "Vladimir Fedorchenko",
-    "email": "onevovan@softkitit.com"
+    "email": "onevovan@softkitit.com",
+    "url": "https://softkit.dev"
   },
   "maintainers": [
     {
-      "name": "Matvey Melishev",
-      "email": "matvey@melishev.ru",
-      "url": "https://melishev.ru"
-    },
-    {
-      "name": "Jason Skipper",
-      "url": "https://www.skipperinnovations.com"
+      "name": "Vitalii Samofal",
+      "email": "vitalii.samofal@softkit.dev",
+      "url": "https://softkit.dev"
     }
   ],
-  "engines": {
-    "node": "18.14.2",
-    "npm": "9.5.0",
-    "yarn": "1.22.19"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/melishev/strapi-plugin-editor-js.git"
