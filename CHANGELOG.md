@@ -1,3 +1,10 @@
+# 1.0.0 (2024-03-04)
+
+
+### Features
+
+* release new version 4 ([0ee98f9](https://github.com/softkitit/strapi-plugin-react-editorjs/commit/0ee98f947d36b87ac5a7002c92b7e4183dfe8000))
+
 ## [2.0.2](https://github.com/melishev/strapi-plugin-editor-js/compare/v2.0.1...v2.0.2) (2022-09-02)
 
 
