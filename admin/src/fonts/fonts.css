@@ -1,0 +1,30 @@
+@font-face {
+	font-family: 'Sansation';
+	src: local('Sansation Bold'),
+		url('./sansationbold.woff2') format('woff2'),
+		url('./sansationbold.woff') format('woff'),
+		url('./sansationbold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: 'Sansation';
+	src: local('Sansation Regular'),
+		url('./sansationregular.woff2') format('woff2'),
+		url('./sansationregular.woff') format('woff'),
+		url('./sansationregular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: 'Rounded';
+	src: local('Rounded Mplus 1c bold'),
+		url('./MPLUSRounded1c-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+	font-display: fallback;
+}
