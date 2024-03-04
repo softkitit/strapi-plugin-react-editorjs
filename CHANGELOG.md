@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/softkitit/strapi-plugin-react-editorjs/compare/v1.0.0...v1.0.1) (2024-03-04)
+
+
+### Bug Fixes
+
+* added publish config public access ([d5ec58b](https://github.com/softkitit/strapi-plugin-react-editorjs/commit/d5ec58b46b1000233cf939505e786cf0c85e1a41))
+
 # 1.0.0 (2024-03-04)
 
 
