@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/softkitit/strapi-plugin-react-editorjs/compare/v1.0.2...v1.0.3) (2024-03-04)
+
+
+### Bug Fixes
+
+* changed code to point to new company library ([d3a8339](https://github.com/softkitit/strapi-plugin-react-editorjs/commit/d3a8339728ca5da77ee069846e0741d26de6b446))
+
 ## [1.0.2](https://github.com/softkitit/strapi-plugin-react-editorjs/compare/v1.0.1...v1.0.2) (2024-03-04)
 
 
