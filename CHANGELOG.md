@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/softkitit/strapi-plugin-react-editorjs/compare/v1.0.1...v1.0.2) (2024-03-04)
+
+
+### Bug Fixes
+
+* removed change font library from sources and build it separately ([f0fddd3](https://github.com/softkitit/strapi-plugin-react-editorjs/commit/f0fddd394c8d97b81e13d4c5b4d1f40c60f54d9f))
+
 ## [1.0.1](https://github.com/softkitit/strapi-plugin-react-editorjs/compare/v1.0.0...v1.0.1) (2024-03-04)
 
 
