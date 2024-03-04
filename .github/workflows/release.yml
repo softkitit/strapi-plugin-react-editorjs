@@ -26,29 +26,8 @@ jobs:
         run: yarn install --immutable
 
       - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v4
-        with:
-          semantic_version: 22.0.2
-          extra_plugins: |
-            @semantic-release/changelog@6.0.0
-            @semantic-release/git@10.0.0
-          branches: |
-            [
-              '+([0-9])?(.{+([0-9]),x}).x',
-              'master',
-              'main',
-              'next',
-              'next-major',
-              {
-                name: 'beta',
-                prerelease: true
-              },
-              {
-                name: 'alpha',
-                prerelease: true
-              }
-            ]
         env:
-          GITHUB_TOKEN: ${{ secrets.ALLOW_COMMIT_GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: ./node_modules/.bin/semantic-release
 
