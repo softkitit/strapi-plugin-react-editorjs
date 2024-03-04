@@ -28,4 +28,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.ALLOW_COMMIT_GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-        run: npx -p @semantic-release/changelog -p @semantic-release/git -p semantic-release semantic-release
+        run: semantic-release
