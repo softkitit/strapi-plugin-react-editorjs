@@ -633,6 +633,11 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/merge-streams/-/merge-streams-2.3.0.tgz#719df7fb41766bc143369eaa0dd56d8dc87c9958"
   integrity sha512-LtoMMhxAlorcGhmFYI+LhPgbPZCkgP6ra1YL604EeF6U98pLlQ3iWIGMdWSC+vWmPBWBNgmDBAhnAobLROJmwg==
 
+"@softkit/editorjs-inline-font-size-tool@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@softkit/editorjs-inline-font-size-tool/-/editorjs-inline-font-size-tool-1.0.1.tgz#5e5164f24d75d40be13a47b68f65a3eaecf72a29"
+  integrity sha512-0gMDzDUUfi+0iQx1beBYn/VMuXnEf3RwsFWnDry9Dz8862bpGY7lQuQxsUw3Sv+XkBSzT2fIqGDi3wnCY47iaA==
+
 "@szmarczak/http-timer@^4.0.5":
   version "4.0.6"
   resolved "https://registry.npmjs.org/@szmarczak/http-timer/-/http-timer-4.0.6.tgz"
@@ -1322,11 +1327,6 @@ editorjs-inline-font-family-tool@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/editorjs-inline-font-family-tool/-/editorjs-inline-font-family-tool-1.0.4.tgz#3fb5f3c568c376080135422fdfede4b32cec3f95"
   integrity sha512-9fCbazdtr0EasyCUeS86FS8oyFiy8OlHPNdpXqoTmYa1BEVADtz0aUyUQ4WdghvfA+rOGGkB3V20j88UYdalcw==
-
-editorjs-inline-font-size-tool@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/editorjs-inline-font-size-tool/-/editorjs-inline-font-size-tool-1.0.1.tgz#43c1eac14c1716927a8279d10cadc33e46ba9cf8"
-  integrity sha512-ZuwRGaLrPBwPqW9KawMGjWuvyvPGO/tPUReWYBdyqAmFuOB5H5nw8TK1gAVIMFp7Q+vT0pQdscgHwnktj8pd5w==
 
 editorjs-paragraph-with-alignment@^3.0.0:
   version "3.0.0"

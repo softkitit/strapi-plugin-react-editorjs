@@ -19,7 +19,7 @@ import Underline from "@editorjs/underline";
 import BreakLine from "editorjs-break-line";
 
 const StylePlugin = require("editorjs-style");
-const FontSize = require("editorjs-inline-font-size-tool");
+const FontSize = require("@softkit/editorjs-inline-font-size-tool");
 // const FontSize = require('../../../packages/editorjs-inline-font-size/src/index')
 const FontFamily = require("editorjs-inline-font-family-tool");
 
