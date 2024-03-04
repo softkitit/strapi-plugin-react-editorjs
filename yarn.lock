@@ -1323,8 +1323,10 @@ editorjs-inline-font-family-tool@^1.0.4:
   resolved "https://registry.yarnpkg.com/editorjs-inline-font-family-tool/-/editorjs-inline-font-family-tool-1.0.4.tgz#3fb5f3c568c376080135422fdfede4b32cec3f95"
   integrity sha512-9fCbazdtr0EasyCUeS86FS8oyFiy8OlHPNdpXqoTmYa1BEVADtz0aUyUQ4WdghvfA+rOGGkB3V20j88UYdalcw==
 
-"editorjs-inline-font-size-tool@file:./packages/editorjs-inline-font-size":
-  version "2.0.2"
+editorjs-inline-font-size-tool@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/editorjs-inline-font-size-tool/-/editorjs-inline-font-size-tool-1.0.1.tgz#43c1eac14c1716927a8279d10cadc33e46ba9cf8"
+  integrity sha512-ZuwRGaLrPBwPqW9KawMGjWuvyvPGO/tPUReWYBdyqAmFuOB5H5nw8TK1gAVIMFp7Q+vT0pQdscgHwnktj8pd5w==
 
 editorjs-paragraph-with-alignment@^3.0.0:
   version "3.0.0"

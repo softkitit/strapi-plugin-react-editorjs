@@ -36,7 +36,7 @@
     "classnames": "^2.3.1",
     "editorjs-break-line": "^1.0.3",
     "editorjs-inline-font-family-tool": "^1.0.4",
-    "editorjs-inline-font-size-tool": "file:./packages/editorjs-inline-font-size",
+    "editorjs-inline-font-size-tool": "1.0.1",
     "editorjs-paragraph-with-alignment": "^3.0.0",
     "editorjs-style": "^3.0.3",
     "editorjs-text-color-plugin": "^1.13.1",

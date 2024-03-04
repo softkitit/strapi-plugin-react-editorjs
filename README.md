@@ -32,6 +32,7 @@
 - [x] [Checklist Tool](https://github.com/editor-js/checklist)
 - [x] [Delimiter Tool](https://github.com/editor-js/delimiter)
 - [x] [InlineCode Tool](https://github.com/editor-js/inline-code)
+- [x] [Change Font Size](https://github.com/softkitit/editorjs-inline-font-size)
 - [ ] [Personality Tool](https://github.com/editor-js/personality)
 - [ ] [Attaches Tool](https://github.com/editor-js/attaches)
 
