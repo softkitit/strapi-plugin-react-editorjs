@@ -1,7 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import EditorJs from 'react-editor-js';
-import requiredTools from './requiredTools';
+import ReactEditorJS from '@react-editor-js/client';
+import { useFetchClient } from '@strapi/strapi/admin';
+import getRequiredTools from './requiredTools';
 import customTools from '../../config/customTools';
 
 import MediaLibAdapter from '../medialib/adapter'
@@ -9,6 +10,9 @@ import MediaLibComponent from '../medialib/component';
 import {changeFunc, getToggleFunc} from '../medialib/utils';
 
 const Editor = ({ onChange, name, value }) => {
+
+  const fetchClient = useFetchClient();
+  const requiredTools = getRequiredTools(fetchClient);
 
   const [editorInstance, setEditorInstance] = useState();
   const [mediaLibBlockIndex, setMediaLibBlockIndex] = useState(-1);
@@ -38,28 +42,32 @@ const Editor = ({ onChange, name, value }) => {
     }
   }
 
+  let defaultValue;
+  try {
+    defaultValue = value ? JSON.parse(value) : undefined;
+  } catch (e) {
+    defaultValue = undefined;
+  }
+
   return (
     <>
       <div style={{ border: `1px solid rgb(227, 233, 243)`, borderRadius: `2px`, marginTop: `4px` }}>
-        <EditorJs
-          // data={JSON.parse(value)}
-          // enableReInitialize={true}
-          onReady={(api) => {
-            if(value && JSON.parse(value).blocks.length) {
-              api.blocks.render(JSON.parse(value))
-            }
-            document.querySelector('[data-tool="image"]').remove()
+        <ReactEditorJS
+          defaultValue={defaultValue}
+          onInitialize={(instance) => {
+            setEditorInstance(instance);
+            const imageTool = document.querySelector('[data-tool="image"]');
+            if (imageTool) imageTool.remove();
           }}
-          onChange={(api, newData) => {
+          onChange={async (api, event) => {
+            const newData = await api.saver.save();
             if (!newData.blocks.length) {
-              newData = null;
-              onChange({ target: { name, value: newData } });
+              onChange(name, null);
             } else {
-              onChange({ target: { name, value: JSON.stringify(newData) } });
+              onChange(name, JSON.stringify(newData));
             }
           }}
           tools={{...requiredTools, ...customTools, ...customImageTool}}
-          instanceRef={instance => setEditorInstance(instance)}
         />
       </div>
       <MediaLibComponent

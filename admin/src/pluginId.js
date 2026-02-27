@@ -1,7 +1,3 @@
-const pluginPkg = require('../../package.json');
-const pluginId = pluginPkg.name.replace(
-  /^strapi-plugin-react-/i,
-  ''
-);
+const pluginId = 'editorjs';
 
-module.exports = pluginId;
+export default pluginId;

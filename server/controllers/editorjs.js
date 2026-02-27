@@ -1,51 +1,62 @@
 const ogs = require('open-graph-scraper');
-const { parseMultipartData } = require('@strapi/utils');
 const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
-const { LocalFileData } = require('get-file-object-from-local-path');
 
 module.exports = ({ strapi }) => ({
 
   link: async (ctx) => {
-    const result = await new Promise((resolve) => {
-
-      ogs(ctx.query, (error, results, response) => {
-
-        const imageUrl = (results.ogImage && results.ogImage.url) ? { url: results.ogImage.url } : undefined;
-
-        resolve({
-          success: 1,
-          meta: {
-            title: results.ogTitle,
-            description: results.ogDescription,
-            image: imageUrl,
-          },
-        })
-      })
-    });
-
-    ctx.send(result);
-  },
-
-  byFile: async (ctx) => {
     try {
-      const { files } = parseMultipartData(ctx)
+      const { result } = await ogs(ctx.query);
 
-      const [uploadedFile] = await strapi.plugin('upload').service('upload').upload({
-        data: {},
-        files: Object.values(files)
-      })
+      const imageUrl = (result.ogImage && result.ogImage[0] && result.ogImage[0].url)
+        ? { url: result.ogImage[0].url }
+        : undefined;
 
       ctx.send({
         success: 1,
-        file: uploadedFile
-      })
+        meta: {
+          title: result.ogTitle,
+          description: result.ogDescription,
+          image: imageUrl,
+        },
+      });
     } catch (e) {
       ctx.send({
         success: 0,
         message: e.message
-      }, 500)
+      }, 500);
+    }
+  },
+
+  byFile: async (ctx) => {
+    try {
+      const files = ctx.request.files;
+
+      const fileEntries = files.image || files['files.image'];
+      const fileArray = Array.isArray(fileEntries) ? fileEntries : [fileEntries];
+
+      const filesToUpload = fileArray.map(file => ({
+        path: file.filepath,
+        name: file.originalFilename,
+        type: file.mimetype,
+        size: file.size,
+      }));
+
+      const [uploadedFile] = await strapi.plugin('upload').service('upload').upload({
+        data: {},
+        files: filesToUpload
+      });
+
+      ctx.send({
+        success: 1,
+        file: uploadedFile
+      });
+    } catch (e) {
+      ctx.send({
+        success: 0,
+        message: e.message
+      }, 500);
     }
   },
 
@@ -60,12 +71,12 @@ module.exports = ({ strapi }) => ({
 
       await fs.promises.writeFile(filePath, buffer)
 
-      const fileData = new LocalFileData(filePath)
+      const mimeType = response.headers['content-type'] || 'application/octet-stream';
 
       const file = {
         path: filePath,
-        name: fileData.name,
-        type: fileData.type,
+        name: `${name}${ext}`,
+        type: mimeType.split(';')[0].trim(),
         size: Buffer.byteLength(buffer),
       }
 
