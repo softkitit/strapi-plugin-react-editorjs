@@ -18,10 +18,9 @@ import Paragraph from "editorjs-paragraph-with-alignment";
 import Underline from "@editorjs/underline";
 import BreakLine from "editorjs-break-line";
 
-const StylePlugin = require("editorjs-style");
-const FontSize = require("@softkit/editorjs-inline-font-size-tool");
-// const FontSize = require('../../../packages/editorjs-inline-font-size/src/index')
-const FontFamily = require("editorjs-inline-font-family-tool");
+import StylePlugin from "editorjs-style";
+import FontSize from "@softkit/editorjs-inline-font-size-tool";
+import FontFamily from "editorjs-inline-font-family-tool";
 
 const customTools = {
   embed: Embed,

@@ -1,6 +1,6 @@
 {
   "name": "@softkit/strapi-plugin-react-editorjs",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Plugin for Strapi Headless CMS, hiding the standard WYSIWYG editor and replacing it with Editor.js",
   "homepage": "https://market.strapi.io/plugins/strapi-plugin-react-editorjs",
   "strapi": {
@@ -33,21 +33,27 @@
     "@editorjs/table": "2.0.1",
     "@editorjs/underline": "^1.0.0",
     "@editorjs/warning": "1.2.0",
+    "@softkit/editorjs-inline-font-size-tool": "1.0.1",
     "classnames": "^2.3.1",
     "editorjs-break-line": "^1.0.3",
     "editorjs-inline-font-family-tool": "^1.0.4",
-    "@softkit/editorjs-inline-font-size-tool": "1.0.1",
     "editorjs-paragraph-with-alignment": "^3.0.0",
     "editorjs-style": "^3.0.3",
-    "editorjs-text-color-plugin": "^1.13.1",
-    "get-file-object-from-local-path": "1.0.2",
-    "open-graph-scraper": "4.9.2",
+    "editorjs-text-color-plugin": "^2.0.4",
+    "open-graph-scraper": "^6.0.0",
     "react-editor-js": "1.10.0"
   },
+  "peerDependencies": {
+    "@strapi/design-system": "^2.0.0",
+    "@strapi/strapi": "^5.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "styled-components": "^6.0.0"
+  },
   "devDependencies": {
-    "semantic-release": "^22.0.2",
     "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1"
+    "@semantic-release/git": "^10.0.1",
+    "semantic-release": "^22.0.2"
   },
   "publishConfig": {
     "access": "public"

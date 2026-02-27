@@ -1,7 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import EditorJs from 'react-editor-js';
-import requiredTools from './requiredTools';
+import { useFetchClient } from '@strapi/strapi/admin';
+import getRequiredTools from './requiredTools';
 import customTools from '../../config/customTools';
 
 import MediaLibAdapter from '../medialib/adapter'
@@ -9,6 +10,9 @@ import MediaLibComponent from '../medialib/component';
 import {changeFunc, getToggleFunc} from '../medialib/utils';
 
 const Editor = ({ onChange, name, value }) => {
+
+  const fetchClient = useFetchClient();
+  const requiredTools = getRequiredTools(fetchClient);
 
   const [editorInstance, setEditorInstance] = useState();
   const [mediaLibBlockIndex, setMediaLibBlockIndex] = useState(-1);
@@ -52,10 +56,9 @@ const Editor = ({ onChange, name, value }) => {
           }}
           onChange={(api, newData) => {
             if (!newData.blocks.length) {
-              newData = null;
-              onChange({ target: { name, value: newData } });
+              onChange(name, null);
             } else {
-              onChange({ target: { name, value: JSON.stringify(newData) } });
+              onChange(name, JSON.stringify(newData));
             }
           }}
           tools={{...requiredTools, ...customTools, ...customImageTool}}
