@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/softkitit/strapi-plugin-react-editorjs/compare/v2.0.3...v2.0.4) (2026-02-28)
+
+
+### Bug Fixes
+
+* prevent media library dialog from opening on page load ([93db6d9](https://github.com/softkitit/strapi-plugin-react-editorjs/commit/93db6d92b4408734d6d86952ba7679bffb79dce1))
+
 ## [2.0.3](https://github.com/softkitit/strapi-plugin-react-editorjs/compare/v2.0.2...v2.0.3) (2026-02-28)
 
 
