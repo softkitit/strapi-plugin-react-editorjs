@@ -1,3 +1,16 @@
+# [2.0.0](https://github.com/softkitit/strapi-plugin-react-editorjs/compare/v1.0.3...v2.0.0) (2026-02-28)
+
+
+* feat!: migrate plugin to Strapi v5 ([bcbb35d](https://github.com/softkitit/strapi-plugin-react-editorjs/commit/bcbb35dc7cd0c627d38422b6410c320a8d73e3cc))
+
+
+### BREAKING CHANGES
+
+* This version requires Strapi v5, Node.js >= 24, and pnpm >= 10.
+Migrated from @strapi/helper-plugin to @strapi/strapi/admin APIs,
+updated Design System imports, upgraded react-editor-js to v2,
+and migrated build tooling from npm/yarn to pnpm.
+
 ## [1.0.3](https://github.com/softkitit/strapi-plugin-react-editorjs/compare/v1.0.2...v1.0.3) (2024-03-04)
 
 
