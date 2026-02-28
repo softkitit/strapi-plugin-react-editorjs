@@ -7,24 +7,32 @@ export default class MediaLibAdapter {
     }
   }
 
-  constructor({api, config}) {
+  constructor({api, config, data}) {
     this.api = api
     this.config = config || {}
+    this._isRestoredFromData = data && data.name;
   }
 
   render() {
-    const currentIndex = this.api.blocks.getCurrentBlockIndex();
+    const wrapper = document.createElement('div');
 
-    if (this.config.mediaLibToggleFunc) {
-      this.config.mediaLibToggleFunc(currentIndex);
+    if (!this._isRestoredFromData) {
+      const currentIndex = this.api.blocks.getCurrentBlockIndex();
+      if (this.config.mediaLibToggleFunc) {
+        this.config.mediaLibToggleFunc(currentIndex);
+      }
     }
 
-    return document.createElement('p');
+    return wrapper;
   }
 
   save() {
     return {
       name: "mediaLibraryStrapi"
     }
+  }
+
+  static get isReadOnlySupported() {
+    return true;
   }
 }
