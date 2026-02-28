@@ -4,7 +4,7 @@
 
 <h1 align="center">🎛 Strapi + ✒️ Editor.js</h1>
 
-⚠️ **This is the Strapi v4 version of this plugin! In order to use with v3, please use [release v.1.5.1](https://github.com/melishev/strapi-plugin-react-editorjs/releases/tag/v1.5.1).**
+⚠️ **This is the Strapi v5 version of this plugin! For Strapi v4, please use [v1.x releases](https://github.com/softkitit/strapi-plugin-react-editorjs/releases/tag/v1.0.3).**
 
 
 ## 🙉 What it is?
@@ -45,12 +45,12 @@
 ## 🤟🏻 Getting Started
 
 ```bash
-yarn add strapi-plugin-react-editorjs
+pnpm add @softkit/strapi-plugin-react-editorjs
 # or
-npm install strapi-plugin-react-editorjs
+npm install @softkit/strapi-plugin-react-editorjs
 ```
 
-In order for Strapi to show the Link Tool thumbnails correctly, you will need to edit the 'strapi::security' line in ./config/middlewares.js. Change that line to the following (do this at your own risk). 
+In order for Strapi to show the Link Tool thumbnails correctly and for EditorJS plugins to work, you will need to edit the `strapi::security` middleware in `./config/middlewares.js` (do this at your own risk):
 
 ```js
 module.exports = [
@@ -61,6 +61,7 @@ module.exports = [
       contentSecurityPolicy: {
         directives: {
           'img-src': ['*'],
+          'script-src': ["'self'", "'unsafe-eval'"],
         },
       }
     },
@@ -75,24 +76,21 @@ module.exports = [
 
 If you want to change the look of the editor or add/remove editorJS plugins, you will need to do the following:
 
-1. If this plugin is already install via yarn or npm, uninstall: 
+1. If this plugin is already installed, uninstall it first:
 ```bash
-yarn remove strapi-plugin-react-editorjs
+pnpm remove @softkit/strapi-plugin-react-editorjs
 # or
-npm uninstall strapi-plugin-react-editorjs
+npm uninstall @softkit/strapi-plugin-react-editorjs
 ```
 2. Go to the ./src/plugins folder (create it if it doesn't exist) and clone the project:
 
 ```bash
-# If you wish to clone the Master Branch
-git clone https://github.com/melishev/strapi-plugin-react-editorjs.git
-# If you wish to clone the Beta Branch
-git clone --single-branch --branch beta https://github.com/melishev/strapi-plugin-react-editorjs.git
+git clone https://github.com/softkitit/strapi-plugin-react-editorjs.git
 ```
 3. Go into the plugin and install dependencies:
    - `cd strapi-plugin-react-editorjs`
-   - `yarn install` or `npm install`
-4. In an editor add the following code into the main Strapi v4 ./config/plugins.js file (create the file if it doesn't exist)
+   - `pnpm install`
+4. In your Strapi v5 `./config/plugins.js` (or `.ts`) file, add:
 
 ```js
 module.exports = ({ env }) => ({
@@ -105,13 +103,11 @@ module.exports = ({ env }) => ({
 })
 ```
 
-5. To make changes to EditorJS plugins, edit the `./src/plugins/strapi-plugin-react-editorjs/admin/src/config/customTools.js` file. 
+5. To make changes to EditorJS plugins, edit the `./src/plugins/strapi-plugin-react-editorjs/admin/src/config/customTools.js` file.
    - Note: the Image Tool add-on has been highly customized in order to work in Strapi and cannot be edited in the `customTools.js` file. If you wish to develop it further, you may, but it will take much more advanced knowledge and testing.
 6. Rebuild Strapi after installation and after any changes made in the plugin.
 ```bash
-yarn build
-# or
-npm run build
+pnpm run build
 ```
 
 ### Please note that the add-ons are configured for Strapi, be careful when changing the configuration.
