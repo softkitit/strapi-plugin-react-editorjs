@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/softkitit/strapi-plugin-react-editorjs/compare/v2.0.0...v2.0.1) (2026-02-28)
+
+
+### Bug Fixes
+
+* use named import for StyleInlineTool from editorjs-style ([e3e11f6](https://github.com/softkitit/strapi-plugin-react-editorjs/commit/e3e11f6126ddbba71ba7991bd7d4718c4b990152))
+
 # [2.0.0](https://github.com/softkitit/strapi-plugin-react-editorjs/compare/v1.0.3...v2.0.0) (2026-02-28)
 
 
