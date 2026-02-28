@@ -37,9 +37,9 @@ module.exports = ({ strapi }) => ({
       const fileArray = Array.isArray(fileEntries) ? fileEntries : [fileEntries];
 
       const filesToUpload = fileArray.map(file => ({
-        path: file.filepath,
-        name: file.originalFilename,
-        type: file.mimetype,
+        filepath: file.filepath,
+        originalFilename: file.originalFilename,
+        mimetype: file.mimetype,
         size: file.size,
       }));
 
@@ -74,9 +74,9 @@ module.exports = ({ strapi }) => ({
       const mimeType = response.headers['content-type'] || 'application/octet-stream';
 
       const file = {
-        path: filePath,
-        name: `${name}${ext}`,
-        type: mimeType.split(';')[0].trim(),
+        filepath: filePath,
+        originalFilename: `${name}${ext}`,
+        mimetype: mimeType.split(';')[0].trim(),
         size: Buffer.byteLength(buffer),
       }
 
