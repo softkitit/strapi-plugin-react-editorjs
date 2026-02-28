@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/softkitit/strapi-plugin-react-editorjs/compare/v2.0.2...v2.0.3) (2026-02-28)
+
+
+### Bug Fixes
+
+* resolve media library, color picker, and dependency issues ([eb72a51](https://github.com/softkitit/strapi-plugin-react-editorjs/commit/eb72a51d2550a182c5b0026c0f1a8f88cb6e909b))
+
 ## [2.0.2](https://github.com/softkitit/strapi-plugin-react-editorjs/compare/v2.0.1...v2.0.2) (2026-02-28)
 
 
