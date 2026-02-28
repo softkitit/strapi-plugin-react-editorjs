@@ -9,7 +9,7 @@ const prefixFileUrlWithBackendUrl = (url) => {
   return url;
 };
 
-const MediaLibComponent = ({isOpen, onChange, onToggle}) => {
+const MediaLibComponent = ({isOpen = false, onChange = () => {}, onToggle = () => {}}) => {
 
   const components = useStrapiApp('MediaLibComponent', (state) => state.components);
   const [data, setData] = useState(null);
@@ -48,12 +48,6 @@ const MediaLibComponent = ({isOpen, onChange, onToggle}) => {
     />
   );
 
-};
-
-MediaLibComponent.defaultProps = {
-  isOpen: false,
-  onChange: () => {},
-  onToggle: () => {},
 };
 
 MediaLibComponent.propTypes = {

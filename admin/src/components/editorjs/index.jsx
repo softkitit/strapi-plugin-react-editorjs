@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 import ReactEditorJS from '@react-editor-js/client';
 import { useFetchClient } from '@strapi/strapi/admin';
@@ -14,7 +14,7 @@ const Editor = ({ onChange, name, value }) => {
   const fetchClient = useFetchClient();
   const requiredTools = getRequiredTools(fetchClient);
 
-  const [editorInstance, setEditorInstance] = useState();
+  const editorInstanceRef = useRef();
   const [mediaLibBlockIndex, setMediaLibBlockIndex] = useState(-1);
   const [isMediaLibOpen, setIsMediaLibOpen] = useState(false);
 
@@ -28,10 +28,10 @@ const Editor = ({ onChange, name, value }) => {
         indexStateSetter: setMediaLibBlockIndex,
         data,
         index: mediaLibBlockIndex,
-        editor: editorInstance
+        editor: editorInstanceRef.current
     });
     mediaLibToggleFunc();
-  }, [mediaLibBlockIndex, editorInstance]);
+  }, [mediaLibBlockIndex]);
 
   const customImageTool = {
     mediaLib: {
@@ -55,9 +55,7 @@ const Editor = ({ onChange, name, value }) => {
         <ReactEditorJS
           defaultValue={defaultValue}
           onInitialize={(instance) => {
-            setEditorInstance(instance);
-            const imageTool = document.querySelector('[data-tool="image"]');
-            if (imageTool) imageTool.remove();
+            editorInstanceRef.current = instance.dangerouslyLowLevelInstance ?? instance;
           }}
           onChange={async (api, event) => {
             const newData = await api.saver.save();

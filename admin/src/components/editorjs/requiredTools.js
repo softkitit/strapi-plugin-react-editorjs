@@ -6,6 +6,7 @@ import Image from '@editorjs/image'
 const getRequiredTools = (fetchClient) => ({
   image: {
     class: Image,
+    toolbox: false,
     config: {
       field: "files.image",
       additionalRequestData: {

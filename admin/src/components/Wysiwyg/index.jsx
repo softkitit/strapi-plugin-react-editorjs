@@ -1,5 +1,4 @@
 import React from "react";
-import { isEmpty } from 'lodash';
 import { useField } from '@strapi/strapi/admin';
 import Editor from "../editorjs";
 import cn from 'classnames';
@@ -18,7 +17,7 @@ const Wysiwyg = ({
   const field = useField(name);
 
   return (
-    <Wrapper size={1} className={`${cn(!isEmpty(className) && className)}`} style={style}>
+    <Wrapper size={1} className={`${cn(className || '')}`} style={style}>
       <Box>
         <Typography variant="pi" fontWeight="bold">
           {label}

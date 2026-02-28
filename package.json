@@ -29,6 +29,7 @@
     "@editorjs/table": "2.4.5",
     "@editorjs/underline": "^1.2.1",
     "@editorjs/warning": "1.4.1",
+    "@react-editor-js/client": "^2.1.0",
     "@softkit/editorjs-inline-font-size-tool": "1.0.1",
     "axios": "^1.13.6",
     "classnames": "^2.5.1",
@@ -38,7 +39,7 @@
     "editorjs-style": "^3.0.3",
     "editorjs-text-color-plugin": "^2.0.4",
     "open-graph-scraper": "^6.11.0",
-    "react-editor-js": "2.1.0"
+    "prop-types": "^15.8.1"
   },
   "peerDependencies": {
     "@strapi/design-system": "^2.0.0",
