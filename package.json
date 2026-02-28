@@ -19,7 +19,7 @@
     "@editorjs/checklist": "1.6.0",
     "@editorjs/code": "2.9.4",
     "@editorjs/delimiter": "1.4.2",
-    "@editorjs/editorjs": "^2.28.2",
+    "@editorjs/editorjs": "2.28.2",
     "@editorjs/embed": "2.8.0",
     "@editorjs/header": "2.8.8",
     "@editorjs/image": "2.10.3",
@@ -34,6 +34,7 @@
     "@editorjs/underline": "^1.2.1",
     "@editorjs/warning": "1.4.1",
     "@softkit/editorjs-inline-font-size-tool": "1.0.1",
+    "axios": "^1.13.6",
     "classnames": "^2.5.1",
     "editorjs-break-line": "^1.0.10",
     "editorjs-inline-font-family-tool": "^1.0.4",
@@ -88,5 +89,10 @@
     "editor-js",
     "wysiwyg"
   ],
-  "license": "MIT"
+  "engines": {
+    "node": ">=24.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "license": "MIT",
+  "packageManager": "pnpm@10.30.3+sha512.c961d1e0a2d8e354ecaa5166b822516668b7f44cb5bd95122d590dd81922f606f5473b6d23ec4a5be05e7fcd18e8488d47d978bbe981872f1145d06e9a740017"
 }

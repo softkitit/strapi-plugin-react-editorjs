@@ -17,17 +17,19 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
-          cache: 'yarn'
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: yarn install --immutable
+        run: pnpm install --frozen-lockfile
 
       - name: Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.ALLOW_COMMIT_GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-        run: ./node_modules/.bin/semantic-release
-
+        run: pnpm exec semantic-release
