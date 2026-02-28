@@ -18,7 +18,7 @@ import Paragraph from "editorjs-paragraph-with-alignment";
 import Underline from "@editorjs/underline";
 import BreakLine from "editorjs-break-line";
 
-import StylePlugin from "editorjs-style";
+import { StyleInlineTool } from "editorjs-style";
 import FontSize from "@softkit/editorjs-inline-font-size-tool";
 import FontFamily from "editorjs-inline-font-family-tool";
 
@@ -85,7 +85,7 @@ const customTools = {
     class: Paragraph,
     inlineToolbar: true,
   },
-  style: StylePlugin.StyleInlineTool,
+  style: StyleInlineTool,
   fontFamily: {
     class: FontFamily,
     config: {
