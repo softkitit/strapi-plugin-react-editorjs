@@ -1,5 +1,8 @@
 name: Release
 
+permissions:
+  id-token: write  # Required for OIDC
+
 on:
   push:
     branches:
@@ -31,5 +34,4 @@ jobs:
       - name: Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         run: pnpm exec semantic-release
