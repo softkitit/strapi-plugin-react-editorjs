@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/softkitit/strapi-plugin-react-editorjs/compare/v2.0.1...v2.0.2) (2026-02-28)
+
+
+### Bug Fixes
+
+* use Strapi v5 file property names in upload controller ([9c637c0](https://github.com/softkitit/strapi-plugin-react-editorjs/commit/9c637c085d2fdf0ebb31fc3380852b16862992c2))
+
 ## [2.0.1](https://github.com/softkitit/strapi-plugin-react-editorjs/compare/v2.0.0...v2.0.1) (2026-02-28)
 
 
