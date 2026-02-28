@@ -11,10 +11,6 @@
     "required": true,
     "kind": "plugin"
   },
-  "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
   "dependencies": {
     "@editorjs/checklist": "1.6.0",
     "@editorjs/code": "2.9.4",
